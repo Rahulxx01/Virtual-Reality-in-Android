@@ -2,13 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GazeInterationScript : MonoBehaviour {
 
 	// Use this for initialization
 	public float MyTime = 0f;
+
+	public Transform radialProgress;
 	public int sceneInteger;
 	void Start () {
+		radialProgress.GetComponent<Image> ().fillAmount = MyTime;
 		
 	}
 	
@@ -16,14 +20,21 @@ public class GazeInterationScript : MonoBehaviour {
 	public void Update () {
 
 		MyTime += Time.deltaTime;
-		if(MyTime >= 3f){
-			changeScreen(sceneInteger);
+		radialProgress.GetComponent<Image> ().fillAmount = MyTime/10;
+		if(MyTime >= 10f){
+			//changeScreen(sceneInteger);
+			SceneManager.LoadScene (sceneInteger);
 		}
 		
 	}
 
+	public void Reset(){
+		MyTime = 0f;
+		radialProgress.GetComponent<Image> ().fillAmount = MyTime;
+	}
+
 	public void changeScreen(int changeScene){
-		SceneManager.LoadScene (changeScene);
+		
 	}
 
 
