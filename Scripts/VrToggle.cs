@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
+using UnityEngine.VR;
 
 public class VrToggle : MonoBehaviour {
 
