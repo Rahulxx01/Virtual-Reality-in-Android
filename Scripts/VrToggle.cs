@@ -12,8 +12,10 @@ public class VrToggle : MonoBehaviour {
 	}
 	public IEnumerator ActivatorVR(string yesVR){
 		XRSettings.LoadDeviceByName (yesVR);
+
 		yield return null;
 		XRSettings.enabled = true;
+
 	}
 	
 

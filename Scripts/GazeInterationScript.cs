@@ -20,8 +20,8 @@ public class GazeInterationScript : MonoBehaviour {
 	public void Update () {
 
 		MyTime += Time.deltaTime;
-		radialProgress.GetComponent<Image> ().fillAmount = MyTime/10;
-		if(MyTime >= 10f){
+		radialProgress.GetComponent<Image> ().fillAmount = MyTime/5;
+		if(MyTime >= 5f){
 			//changeScreen(sceneInteger);
 			SceneManager.LoadScene (sceneInteger);
 		}
